@@ -1,16 +1,24 @@
 import { createSlice } from "@reduxjs/toolkit";
+import Questions from "../../question-bank/questions.json";
 
 export const questionSlice = createSlice({
     name: "question",
     initialState: {
-        text: "Hello world from questionSlice"
+        questionList: [],
+        questionCounter: 0
     },
     reducers: {
-        setText: (state, action) => {
-            state.text = action.payload;
+        loadQuestionList: (state, action) => {
+            state.questionList = Questions;
+        },
+        incrementQuestionCounter: (state, action) => {
+            state.questionCounter += 1;
+        },
+        decrementQuestionCounter: (state, action) => {
+            state.questionCounter -= 1;
         }
     }
 });
 
-export const {setText} = questionSlice.actions;
+export const {loadQuestionList, incrementQuestionCounter, decrementQuestionCounter} = questionSlice.actions;
 export default questionSlice.reducer;

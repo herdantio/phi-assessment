@@ -1,12 +1,16 @@
-import { useSelector } from "react-redux";
-
+import { useDispatch } from "react-redux";
+import QuestionCard from "./components/QuestionCard";
+import {loadQuestionList} from "./store/slices/questionSlice";
 
 function App(params) {
-  const text = useSelector(state => state.question.text);
+  
+  const dispatch = useDispatch();
+  
+  dispatch(loadQuestionList());  
 
   return (
-    <div>
-      <h1>{text}</h1>
+    <div className="flex justify-center">
+      <QuestionCard/>
     </div>
   )
 }
