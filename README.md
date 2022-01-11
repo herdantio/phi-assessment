@@ -28,7 +28,13 @@ To run problem 1 you can either:
 
 Problem 2 is a simple react app built with redux and tailwind
 
-To run problem 2 in development mode you should install dependecies first:
+To run problem 2 in development mode you should change directory:
+
+```
+cd problem2
+```
+
+then, install dependecies:
 
 ```
 npm i
