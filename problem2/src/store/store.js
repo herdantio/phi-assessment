@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import problemSlice from "./modules/problemSlice";
+import questionSlice from "./slices/questionSlice";
 
 export default configureStore({
     reducer: {
-        problem: problemSlice
+        question: questionSlice
     }
 });

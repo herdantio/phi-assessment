@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 
 
 function App(params) {
-  const text = useSelector(state => state.problem.text);
+  const text = useSelector(state => state.question.text);
 
   return (
     <div>
