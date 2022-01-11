@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import QuestionCard from "./components/QuestionCard";
 import {loadQuestionList} from "./store/slices/questionSlice";
+import "./App.css"
 
 function App(params) {
   

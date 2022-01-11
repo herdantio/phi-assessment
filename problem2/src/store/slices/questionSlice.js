@@ -9,16 +9,19 @@ export const questionSlice = createSlice({
     },
     reducers: {
         loadQuestionList: (state, action) => {
-            state.questionList = Questions;
+            state.questionList = [...Questions];
         },
-        incrementQuestionCounter: (state, action) => {
+        incrementQuestionCounter: (state) => {
             state.questionCounter += 1;
         },
-        decrementQuestionCounter: (state, action) => {
+        decrementQuestionCounter: (state) => {
             state.questionCounter -= 1;
+        },
+        setSelectedAnswer: (state, action) => {
+            state.questionList[state.questionCounter].selectedAnswer = action.payload;
         }
     }
 });
 
-export const {loadQuestionList, incrementQuestionCounter, decrementQuestionCounter} = questionSlice.actions;
+export const {loadQuestionList, incrementQuestionCounter, decrementQuestionCounter, setSelectedAnswer} = questionSlice.actions;
 export default questionSlice.reducer;
